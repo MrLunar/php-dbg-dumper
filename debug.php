@@ -1,6 +1,27 @@
 <?php
 /**
- * Please refer to the LICENSE file within this project to view the applicable license.
+  This is free and unencumbered software released into the public domain.
+
+  Anyone is free to copy, modify, publish, use, compile, sell, or
+  distribute this software, either in source code form or as a compiled
+  binary, for any purpose, commercial or non-commercial, and by any
+  means.
+
+  In jurisdictions that recognize copyright laws, the author or authors
+  of this software dedicate any and all copyright interest in the
+  software to the public domain. We make this dedication for the benefit
+  of the public at large and to the detriment of our heirs and
+  successors. We intend this dedication to be an overt act of
+  relinquishment in perpetuity of all present and future rights to this
+  software under copyright law.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+  IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+  OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+  ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+  OTHER DEALINGS IN THE SOFTWARE.
  */
 
 /**
@@ -110,7 +131,7 @@ class debug
 
     if (self::is_cli()) {
       $exit_text = self::cli_format((self::is_tty() ? '  EXIT  ' : 'EXIT'), 'white', 'red', 'bold');
-      $m = "\n$exit_text {$bt['file']}:{$bt['line']}\n";
+      $m = "$exit_text ".self::cli_format("[{$bt['file']}:{$bt['line']}]", null, null, 'bold')."\n";
     }
     else {
       $m =  'quit(): TODO DEBUG';
@@ -138,17 +159,18 @@ class debug
     foreach ($vars as $var)
     {
       if (self::is_cli()) {
-        $output .= '('.self::cli_format(gettype($var), null, null, 'bold').') '.print_r($var, TRUE).'';
+        $output .= self::cli_format("(".gettype($var).")", null, null, 'bold').' '.print_r($var, TRUE)."\n";
       } else {
         echo 'quit(): TODO print_var';
       }
     }
 
     if (self::is_cli()) {
-      echo self::cli_format((self::is_tty() ? "  DEBUG  " : 'DEBUG'), 'black', 'green', 'bold');
-      echo self::cli_format(" {$bt['file']}:{$bt['line']}", 'white', 'black')."\n";
+      echo "\n".self::cli_format((self::is_tty() ? "  DEBUG  " : 'DEBUG'), 'black', 'green', 'bold');
+      echo self::cli_format(" [{$bt['file']}:{$bt['line']}]", null, null, 'bold')."\n";
     }
-    echo $output;
+
+    echo rtrim($output)."\n\n";
 
     return;
   }
@@ -165,7 +187,7 @@ class debug
       $m = "\n$label $message\n";
     }
     else {
-      $m = 'print_error(): TODO DEBUG';
+      $m = 'print_error(): TODO ERROR';
     }
 
     echo $m;
