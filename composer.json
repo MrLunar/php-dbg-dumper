@@ -1,0 +1,15 @@
+{
+    "name": "mrlunar/php-debug-helper",
+    "description": "A lightweight PHP variable dumper and backtrace printer.",
+    "license": "Unlicense",
+    "authors": [
+        {
+            "name": "Mark Bowker",
+            "email": "bowker.mark@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+
+    }
+}
