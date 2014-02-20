@@ -1,7 +1,9 @@
 {
-    "name": "mrlunar/php-debug-helper",
-    "description": "A lightweight PHP variable dumper and backtrace printer.",
+    "name": "mrlunar/php-dbg-dumper",
+    "description": "A lightweight PHP variable and backtrace dumper.",
     "license": "Unlicense",
+    "homepage": "https://github.com/MrLunar/php-dbg-dumper",
+    "keywords": ["variable", "dump", "dumper", "print", "backtrace", "debug"],
     "authors": [
         {
             "name": "Mark Bowker",
