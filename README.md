@@ -31,11 +31,11 @@ dbg::print_r($my_var);
 
 would output in the browser like so:
 
-![2014-02-19 17_07_34-mozilla firefox](https://f.cloud.github.com/assets/4201834/2209164/6aed0e56-9988-11e3-8855-a60fc23f95a2.png)
+![](https://raw.github.com/wiki/MrLunar/php-dbg-dumper/img/2014-02-19%2017_07_34.png)
 
 yet would output in the terminal like so:
 
-![2014-02-19 17_10_19-os x mavericks - vmware workstation](https://f.cloud.github.com/assets/4201834/2209193/cfadf756-9988-11e3-8cd3-05ff2732dae5.png)
+![](https://raw.github.com/wiki/MrLunar/php-dbg-dumper/img/2014-02-19%2017_10_19.png)
 
 Also for example, the expression:
 
@@ -45,7 +45,7 @@ dbg::print_r(rand(1, 50));
 
 would output to the browser:
 
-![2014-02-19 17_23_12-mozilla firefox](https://f.cloud.github.com/assets/4201834/2209323/8c7502f2-998a-11e3-810b-16a362f40cb3.png)
+![](https://raw.github.com/wiki/MrLunar/php-dbg-dumper/img/2014-02-19%2017_23_12.png)
 
 ## Other Commands ##
 
@@ -59,7 +59,8 @@ Same as `dbg::print_r($my_var);` but using PHP's `var_export()` output.
 dbg::quit();
 ```
 A verbose exit() so you don't lose yourself in a whitescreen.
-![2014-02-19 17_14_01-mozilla firefox](https://f.cloud.github.com/assets/4201834/2209219/461a02cc-9989-11e3-8329-2b8c8ab74619.png)
+
+![](https://raw.github.com/wiki/MrLunar/php-dbg-dumper/img/2014-02-19%2017_14_01.png)
 
 ```php
 dbg::error('a terrible error has occured, run for the hills');
@@ -67,7 +68,8 @@ dbg::warning('just an FYI because this will probably cause problems later');
 dbg::info('I just want to talk');
 ```
 Should you feel these are useful in your scripts:
-![2014-02-19 17_15_39-mozilla firefox](https://f.cloud.github.com/assets/4201834/2209238/887a5482-9989-11e3-8fd8-198f7af49d00.png)
+
+![](https://raw.github.com/wiki/MrLunar/php-dbg-dumper/img/2014-02-19%2017_15_39.png)
 
 ```php
 dbg::dump($my_var);
